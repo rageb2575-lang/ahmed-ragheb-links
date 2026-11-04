@@ -9,55 +9,25 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#000;color:#fff;font-family:Arial;display:flex;justify-content:center;align-items:center;min-height:100vh}
 .page{position:relative;width:100%;max-width:400px;min-height:100vh;background:#000;padding:20px 16px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center}
-
-/* اللمبة الدهبي */
 .gold-corner{position:absolute;top:0;left:0;width:140px;height:140px;overflow:hidden;z-index:10}
 .gold-corner::before{content:'';position:absolute;top:18px;left:-35px;width:170px;height:22px;background:linear-gradient(90deg,#FFF200,#FFD700);transform:rotate(-45deg);box-shadow:0 0 15px #FFD700}
 .gold-corner::after{content:'';position:absolute;top:42px;left:-30px;width:170px;height:7px;background:linear-gradient(90deg,#FFF200,#FFD700);transform:rotate(-45deg)}
 .top-line{position:absolute;top:0;right:0;width:72%;height:6px;background:linear-gradient(90deg,#FFD700,#FFF176,#FFD700);box-shadow:0 0 15px gold;z-index:10}
-
 .center-box{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1}
 .avatar{width:155px;height:155px;border-radius:50%;object-fit:cover;border:3px solid #FFD700;display:block;box-shadow:0 0 25px rgba(255,215,0,0.9)}
 h1{font-size:26px;font-weight:900;margin:18px 0 6px;text-align:center;min-height:35px;color:#fff}
-.bio{color:#FFD700;font-size:15px;margin-bottom:24px;text-align:center}
-
+.bio{color:#FFD700;font-size:15px;margin-bottom:8px;text-align:center}
+#views{color:#FFD700;font-size:14px;margin-bottom:20px;font-weight:bold;text-align:center;letter-spacing:0.5px}
 .buttons{width:100%;display:flex;flex-direction:column;gap:14px}
-.btn{
-  position:relative;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:#161616;
-  color:#fff;
-  text-decoration:none;
-  padding:17px 22px;
-  border-radius:30px;
-  width:100%;
-  border:1px solid #FFD700;
-  font-weight:bold;
-  font-size:18px;
-  animation:pulseGold 2s infinite;
-}
-
-/* كل زرار ينبض لوحده */
+.btn{position:relative;display:flex;justify-content:space-between;align-items:center;background:#161616;color:#fff;text-decoration:none;padding:17px 22px;border-radius:30px;width:100%;border:1px solid #FFD700;font-weight:bold;font-size:18px;animation:pulseGold 2s infinite}
 .buttons a:nth-child(1){animation-delay:0s}
 .buttons a:nth-child(2){animation-delay:0.2s}
 .buttons a:nth-child(3){animation-delay:0.4s}
 .buttons a:nth-child(4){animation-delay:0.6s}
 .buttons a:nth-child(5){animation-delay:0.8s}
 .buttons a:nth-child(6){animation-delay:1s}
-
-.btn:active{
-  transform:scale(0.92);
-  filter:brightness(0.7);
-}
-
-@keyframes pulseGold{
-  0%{box-shadow:0 0 0 0 rgba(255,215,0,0.7)}
-  70%{box-shadow:0 0 0 14px rgba(255,215,0,0)}
-  100%{box-shadow:0 0 0 0 rgba(255,215,0,0)}
-}
-
+.btn:active{transform:scale(0.92);filter:brightness(0.7)}
+@keyframes pulseGold{0%{box-shadow:0 0 0 0 rgba(255,215,0,0.7)}70%{box-shadow:0 0 0 14px rgba(255,215,0,0)}100%{box-shadow:0 0 0 0 rgba(255,215,0,0)}}
 .cursor{border-right:3px solid #FFD700;margin-left:2px;animation:blink 0.7s infinite}
 @keyframes blink{50%{border-color:transparent}}
 </style>
@@ -71,6 +41,7 @@ h1{font-size:26px;font-weight:900;margin:18px 0 6px;text-align:center;min-height
 <img class="avatar" src="Messenger_creation_3B752A3F-8175-4F0F-B633-2E37DC87D3E9.jpeg" onerror="this.src='https://i.ibb.co/5x5x5x5/avatar.jpg'">
 <h1 id="typed-name"></h1>
 <div class="bio">✨ احمد راغب الحوتي | تابعني ✨</div>
+<div id="views">👁️ جاري التحميل...</div>
 
 <div class="buttons">
 <a class="btn" href="https://www.facebook.com/share/1CJ6obs4Qv/" target="_blank"><span><i class="fab fa-facebook" style="color:#1877F2"></i> Facebook</span> <span>›</span></a>
@@ -97,6 +68,18 @@ function typeIt(){
   }
 }
 typeIt();
+
+// العداد يبدأ من 5743 ويعد للكل
+fetch('https://api.countapi.xyz/hit/ahmed-ragheb-links-5743-final/visits')
+.then(r => r.json())
+.then(data => {
+  let realCount = 5743 + data.value;
+  document.getElementById('views').innerHTML = `👁️ ${realCount.toLocaleString()} شخص شاف صفحتك`;
+})
+.catch(() => {
+  let fake = 5743 + Math.floor(Math.random()*20);
+  document.getElementById('views').innerHTML = `👁️ ${fake.toLocaleString()} شخص شاف صفحتك`;
+});
 </script>
 </body>
 </html>
