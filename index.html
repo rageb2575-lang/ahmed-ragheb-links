@@ -1,36 +1,45 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahmed Ragheb El-Houty</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#000;color:#fff;font-family:Arial;display:flex;justify-content:center;align-items:center;min-height:100vh}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;color:#fff;font-family:Arial;display:flex;justify-content:center;align-items:center;min-height:100vh}
 .page{position:relative;width:100%;max-width:400px;min-height:100vh;background:#000;padding:20px 16px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center}
+
+/* اللمبة الدهبي */
 .gold-corner{position:absolute;top:0;left:0;width:140px;height:140px;overflow:hidden;z-index:10}
-.gold-corner::before{content:'';position:absolute;top:18px;left:-35px;width:170px;height:22px;background:linear-gradient(90deg,#FFF200,#FFD700);transform:rotate(-45deg);box-shadow:0 0 15px #FFD700,0 0 30px #FFD700}
-.gold-corner::after{content:'';position:absolute;top:42px;left:-30px;width:170px;height:7px;background:linear-gradient(90deg,#FFF200,#FFD700);transform:rotate(-45deg);box-shadow:0 0 10px gold}
+.gold-corner::before{content:'';position:absolute;top:18px;left:-35px;width:170px;height:22px;background:linear-gradient(90deg,#FFF200,#FFD700);transform:rotate(-45deg);box-shadow:0 0 15px #FFD700}
+.gold-corner::after{content:'';position:absolute;top:42px;left:-30px;width:170px;height:7px;background:linear-gradient(90deg,#FFF200,#FFD700);transform:rotate(-45deg)}
 .top-line{position:absolute;top:0;right:0;width:72%;height:6px;background:linear-gradient(90deg,#FFD700,#FFF176,#FFD700);box-shadow:0 0 15px gold;z-index:10}
 
 .center-box{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1}
-.avatar-wrap{width:165px;height:165px;margin:0 auto 12px}
-.avatar{width:155px;height:155px;border-radius:50%;object-fit:cover;border:3px solid #FFD700;display:block;margin:auto;box-shadow:0 0 25px rgba(255,215,0,0.9)}
-
-h1{font-size:26px;font-weight:900;margin:18px 0 4px;text-align:center;min-height:35px}
-.bio{color:#FFD700;font-size:15px;margin-bottom:22px;text-align:center;opacity:0;animation:fadeIn 1s ease 2.5s forwards}
+.avatar{width:155px;height:155px;border-radius:50%;object-fit:cover;border:3px solid #FFD700;display:block;box-shadow:0 0 25px rgba(255,215,0,0.9)}
+h1{font-size:26px;font-weight:900;margin:18px 0 6px;text-align:center;min-height:35px;color:#fff}
+.bio{color:#FFD700;font-size:15px;margin-bottom:24px;text-align:center}
 
 .buttons{width:100%;display:flex;flex-direction:column;gap:14px}
-.btn{position:relative;display:flex;justify-content:space-between;align-items:center;background:#161616;color:#fff;text-decoration:none;padding:17px 22px;border-radius:30px;width:100%;border:1px solid #333;font-weight:bold;font-size:18px;overflow:hidden;transition:transform 0.15s ease, filter 0.15s ease;animation:pulseGold 2s infinite; border-color:rgba(255,215,0,0.4)}
-.btn:active{transform:scale(0.92);filter:brightness(0.7)}
-
-@keyframes pulseGold{
-  0%{box-shadow:0 0 0 0 rgba(255,215,0,0.6)}
-  70%{box-shadow:0 0 0 12px rgba(255,215,0,0)}
-  100%{box-shadow:0 0 0 0 rgba(255,215,0,0)}
+.btn{
+  position:relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#161616;
+  color:#fff;
+  text-decoration:none;
+  padding:17px 22px;
+  border-radius:30px;
+  width:100%;
+  border:1px solid #FFD700;
+  font-weight:bold;
+  font-size:18px;
+  animation:pulseGold 2s infinite;
 }
-/* خلي كل زرار ينبض في وقت مختلف عشان شكلها اجمد */
+
+/* كل زرار ينبض لوحده */
 .buttons a:nth-child(1){animation-delay:0s}
 .buttons a:nth-child(2){animation-delay:0.2s}
 .buttons a:nth-child(3){animation-delay:0.4s}
@@ -38,8 +47,18 @@ h1{font-size:26px;font-weight:900;margin:18px 0 4px;text-align:center;min-height
 .buttons a:nth-child(5){animation-delay:0.8s}
 .buttons a:nth-child(6){animation-delay:1s}
 
-@keyframes fadeIn{to{opacity:1}}
-.cursor{border-right:2px solid #FFD700;animation:blink 0.7s infinite}
+.btn:active{
+  transform:scale(0.92);
+  filter:brightness(0.7);
+}
+
+@keyframes pulseGold{
+  0%{box-shadow:0 0 0 0 rgba(255,215,0,0.7)}
+  70%{box-shadow:0 0 0 14px rgba(255,215,0,0)}
+  100%{box-shadow:0 0 0 0 rgba(255,215,0,0)}
+}
+
+.cursor{border-right:3px solid #FFD700;margin-left:2px;animation:blink 0.7s infinite}
 @keyframes blink{50%{border-color:transparent}}
 </style>
 </head>
@@ -47,33 +66,37 @@ h1{font-size:26px;font-weight:900;margin:18px 0 4px;text-align:center;min-height
 <div class="page">
 <div class="gold-corner"></div>
 <div class="top-line"></div>
+
 <div class="center-box">
-<div class="avatar-wrap">
-<img class="avatar" src="Messenger_creation_3B752A3F-8175-4F0F-B633-2E37DC87D3E9.jpeg" onerror="this.src='https://via.placeholder.com/150'">
-</div>
+<img class="avatar" src="Messenger_creation_3B752A3F-8175-4F0F-B633-2E37DC87D3E9.jpeg" onerror="this.src='https://i.ibb.co/5x5x5x5/avatar.jpg'">
 <h1 id="typed-name"></h1>
 <div class="bio">✨ احمد راغب الحوتي | تابعني ✨</div>
+
 <div class="buttons">
-<a class="btn" href="https://www.facebook.com/share/1CJ6obs4Qv/" target="_blank"><i class="fab fa-facebook" style="color:#1877F2"></i> Facebook</a>
-<a class="btn" href="https://www.instagram.com/ahmedraghebalhoty" target="_blank"><i class="fab fa-instagram" style="color:#E4405F"></i> Instagram</a>
-<a class="btn" href="https://www.tiktok.com/@ahmedrageb3592" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-<a class="btn" href="https://www.snapchat.com/add/ahmed_r258419" target="_blank"><i class="fab fa-snapchat" style="color:#FFFC00"></i> Snapchat</a>
-<a class="btn" href="https://wa.me/201000000000" target="_blank"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp</a>
-<a class="btn" href="https://ipn.eg/S/rageb2575gimal.com/instapay/2UHaO7" target="_blank"><i class="fa-solid fa-money-bill-transfer"></i> InstaPay</a>
+<a class="btn" href="https://www.facebook.com/share/1CJ6obs4Qv/" target="_blank"><span><i class="fab fa-facebook" style="color:#1877F2"></i> Facebook</span> <span>›</span></a>
+<a class="btn" href="https://www.instagram.com/ahmedraghebalhoty" target="_blank"><span><i class="fab fa-instagram" style="color:#E4405F"></i> Instagram</span> <span>›</span></a>
+<a class="btn" href="https://www.tiktok.com/@ahmedrageb3592" target="_blank"><span><i class="fab fa-tiktok"></i> TikTok</span> <span>›</span></a>
+<a class="btn" href="https://www.snapchat.com/add/ahmed_r258419" target="_blank"><span><i class="fab fa-snapchat" style="color:#FFFC00"></i> Snapchat</span> <span>›</span></a>
+<a class="btn" href="https://wa.me/201000000000" target="_blank"><span><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp</span> <span>›</span></a>
+<a class="btn" href="https://ipn.eg/S/rageb2575gimal.com/instapay/2UHaO7" target="_blank"><span><i class="fa-solid fa-money-bill-transfer"></i> InstaPay</span> <span>›</span></a>
 </div>
 </div>
 </div>
+
 <script>
-const nameText="Ahmed Ragheb El-Houty";
-const typedEl=document.getElementById("typed-name");
-let i=0;
-function typeWriter(){
- if(i<nameText.length){
-  typedEl.innerHTML=nameText.substring(0,i+1)+'<span class="cursor"></span>';
-  i++; setTimeout(typeWriter,90);
- } else { typedEl.innerHTML=nameText; }
+const nameText = "Ahmed Ragheb El-Houty";
+const el = document.getElementById("typed-name");
+let i = 0;
+function typeIt(){
+  if(i <= nameText.length){
+    el.innerHTML = nameText.slice(0,i) + '<span class="cursor"></span>';
+    i++;
+    setTimeout(typeIt, 85);
+  } else {
+    el.innerHTML = nameText;
+  }
 }
-window.onload=typeWriter;
+typeIt();
 </script>
 </body>
 </html>
