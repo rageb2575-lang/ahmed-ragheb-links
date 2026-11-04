@@ -17,7 +17,7 @@ body{background:#000;color:#fff;font-family:Arial;display:flex;justify-content:c
 .avatar{width:155px;height:155px;border-radius:50%;object-fit:cover;border:3px solid #FFD700;display:block;box-shadow:0 0 25px rgba(255,215,0,0.9)}
 h1{font-size:26px;font-weight:900;margin:18px 0 6px;text-align:center;min-height:35px;color:#fff}
 .bio{color:#FFD700;font-size:15px;margin-bottom:8px;text-align:center}
-#views{color:#FFD700;font-size:14px;margin-bottom:20px;font-weight:bold;text-align:center}
+#views{color:#FFD700;font-size:18px;margin-bottom:20px;font-weight:900;text-align:center;letter-spacing:1px;text-shadow:0 0 10px gold}
 .buttons{width:100%;display:flex;flex-direction:column;gap:14px}
 .btn{position:relative;display:flex;justify-content:space-between;align-items:center;background:#161616;color:#fff;text-decoration:none;padding:17px 22px;border-radius:30px;width:100%;border:1px solid #FFD700;font-weight:bold;font-size:18px;animation:pulseGold 2s infinite}
 .btn:active{transform:scale(0.92)}
@@ -34,7 +34,7 @@ h1{font-size:26px;font-weight:900;margin:18px 0 6px;text-align:center;min-height
 <img class="avatar" src="Messenger_creation_3B752A3F-8175-4F0F-B633-2E37DC87D3E9.jpeg">
 <h1 id="typed-name"></h1>
 <div class="bio">✨ احمد راغب الحوتي | تابعني ✨</div>
-<div id="views">👁️ 5743</div>
+<div id="views">👁️ 0</div>
 <div class="buttons">
 <a class="btn" href="https://www.facebook.com/share/1CJ6obs4Qv/" target="_blank"><span><i class="fab fa-facebook" style="color:#1877F2"></i> Facebook</span> <span>›</span></a>
 <a class="btn" href="https://www.instagram.com/ahmedraghebalhoty" target="_blank"><span><i class="fab fa-instagram" style="color:#E4405F"></i> Instagram</span> <span>›</span></a>
@@ -56,11 +56,24 @@ function typeIt(){
   } else { el.innerHTML = nameText; }
 }
 typeIt();
+
+// العداد السريع من 0 للرقم الحالي
 let START = 5743;
 let count = localStorage.getItem('ahmed_real_count');
 if(count === null){ count = START; } else { count = parseInt(count) + 1; }
 localStorage.setItem('ahmed_real_count', count);
-document.getElementById('views').innerHTML = `👁️ ${count.toLocaleString()}`;
+
+let current = 0;
+let step = Math.ceil(count / 100); // سرعة العد
+let viewsEl = document.getElementById('views');
+let timer = setInterval(()=>{
+  current += step;
+  if(current >= count){
+    current = count;
+    clearInterval(timer);
+  }
+  viewsEl.innerHTML = `👁️ ${current.toLocaleString()}`;
+}, 20);
 </script>
 </body>
 </html>
