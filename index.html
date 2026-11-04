@@ -17,16 +17,10 @@ body{background:#000;color:#fff;font-family:Arial;display:flex;justify-content:c
 .avatar{width:155px;height:155px;border-radius:50%;object-fit:cover;border:3px solid #FFD700;display:block;box-shadow:0 0 25px rgba(255,215,0,0.9)}
 h1{font-size:26px;font-weight:900;margin:18px 0 6px;text-align:center;min-height:35px;color:#fff}
 .bio{color:#FFD700;font-size:15px;margin-bottom:8px;text-align:center}
-#views{color:#FFD700;font-size:14px;margin-bottom:20px;font-weight:bold;text-align:center;letter-spacing:0.5px}
+#views{color:#FFD700;font-size:14px;margin-bottom:20px;font-weight:bold;text-align:center}
 .buttons{width:100%;display:flex;flex-direction:column;gap:14px}
 .btn{position:relative;display:flex;justify-content:space-between;align-items:center;background:#161616;color:#fff;text-decoration:none;padding:17px 22px;border-radius:30px;width:100%;border:1px solid #FFD700;font-weight:bold;font-size:18px;animation:pulseGold 2s infinite}
-.buttons a:nth-child(1){animation-delay:0s}
-.buttons a:nth-child(2){animation-delay:0.2s}
-.buttons a:nth-child(3){animation-delay:0.4s}
-.buttons a:nth-child(4){animation-delay:0.6s}
-.buttons a:nth-child(5){animation-delay:0.8s}
-.buttons a:nth-child(6){animation-delay:1s}
-.btn:active{transform:scale(0.92);filter:brightness(0.7)}
+.btn:active{transform:scale(0.92)}
 @keyframes pulseGold{0%{box-shadow:0 0 0 0 rgba(255,215,0,0.7)}70%{box-shadow:0 0 0 14px rgba(255,215,0,0)}100%{box-shadow:0 0 0 0 rgba(255,215,0,0)}}
 .cursor{border-right:3px solid #FFD700;margin-left:2px;animation:blink 0.7s infinite}
 @keyframes blink{50%{border-color:transparent}}
@@ -36,13 +30,11 @@ h1{font-size:26px;font-weight:900;margin:18px 0 6px;text-align:center;min-height
 <div class="page">
 <div class="gold-corner"></div>
 <div class="top-line"></div>
-
 <div class="center-box">
-<img class="avatar" src="Messenger_creation_3B752A3F-8175-4F0F-B633-2E37DC87D3E9.jpeg" onerror="this.src='https://i.ibb.co/5x5x5x5/avatar.jpg'">
+<img class="avatar" src="Messenger_creation_3B752A3F-8175-4F0F-B633-2E37DC87D3E9.jpeg">
 <h1 id="typed-name"></h1>
 <div class="bio">✨ احمد راغب الحوتي | تابعني ✨</div>
-<div id="views">👁️ جاري التحميل...</div>
-
+<div id="views">👁️ 5743 شخص شاف صفحتك</div>
 <div class="buttons">
 <a class="btn" href="https://www.facebook.com/share/1CJ6obs4Qv/" target="_blank"><span><i class="fab fa-facebook" style="color:#1877F2"></i> Facebook</span> <span>›</span></a>
 <a class="btn" href="https://www.instagram.com/ahmedraghebalhoty" target="_blank"><span><i class="fab fa-instagram" style="color:#E4405F"></i> Instagram</span> <span>›</span></a>
@@ -53,7 +45,6 @@ h1{font-size:26px;font-weight:900;margin:18px 0 6px;text-align:center;min-height
 </div>
 </div>
 </div>
-
 <script>
 const nameText = "Ahmed Ragheb El-Houty";
 const el = document.getElementById("typed-name");
@@ -61,25 +52,15 @@ let i = 0;
 function typeIt(){
   if(i <= nameText.length){
     el.innerHTML = nameText.slice(0,i) + '<span class="cursor"></span>';
-    i++;
-    setTimeout(typeIt, 85);
-  } else {
-    el.innerHTML = nameText;
-  }
+    i++; setTimeout(typeIt, 85);
+  } else { el.innerHTML = nameText; }
 }
 typeIt();
-
-// العداد يبدأ من 5743 ويعد للكل
-fetch('https://api.countapi.xyz/hit/ahmed-ragheb-links-5743-final/visits')
-.then(r => r.json())
-.then(data => {
-  let realCount = 5743 + data.value;
-  document.getElementById('views').innerHTML = `👁️ ${realCount.toLocaleString()} شخص شاف صفحتك`;
-})
-.catch(() => {
-  let fake = 5743 + Math.floor(Math.random()*20);
-  document.getElementById('views').innerHTML = `👁️ ${fake.toLocaleString()} شخص شاف صفحتك`;
-});
+let START = 5743;
+let count = localStorage.getItem('ahmed_real_count');
+if(count === null){ count = START; } else { count = parseInt(count) + 1; }
+localStorage.setItem('ahmed_real_count', count);
+document.getElementById('views').innerHTML = `👁️ ${count.toLocaleString()} شخص شاف صفحتك`;
 </script>
 </body>
 </html>
