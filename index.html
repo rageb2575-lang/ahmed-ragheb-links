@@ -6,32 +6,75 @@
 <title>Ahmed Ragheb El-Houty</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-body{margin:0;background:#000;color:#fff;font-family:Arial;text-align:center;padding:20px}
-.avatar{width:140px;height:140px;border-radius:50%;border:4px solid gold;box-shadow:0 0 25px gold;object-fit:cover;margin-top:20px}
-.crown{font-size:38px;margin-bottom:-20px;display:block;filter:drop-shadow(0 0 8px gold)}
-h1{margin:15px 0 5px;font-size:24px}
-.bio{color:gold;margin-bottom:25px}
-a.btn{display:flex;justify-content:space-between;align-items:center;background:#1a1a1a;color:#fff;text-decoration:none;padding:16px 22px;border-radius:30px;margin:0 auto 12px;max-width:340px;border:1px solid #333;font-weight:bold}
-a.btn:hover{border-color:gold}
-.qr{width:180px;background:#fff;padding:8px;border-radius:15px;margin:30px auto 10px;display:block;border:3px solid gold;box-shadow:0 0 20px gold}
-.scan{background:gold;color:#000;padding:8px 20px;border-radius:20px;font-weight:900;display:inline-block;margin-top:10px}
+body{margin:0;background:#000;color:#fff;font-family:Arial;text-align:center;min-height:100vh;overflow-x:hidden}
+.page{position:relative;width:100%;max-width:400px;margin:0 auto;min-height:100vh;background:#000;padding:20px;overflow:hidden}
+/* العلامة الدهبي فوق على الشمال زي الصورة */
+.gold-corner{position:absolute;top:0;left:0;width:120px;height:120px;overflow:hidden}
+.gold-corner::before{content:'';position:absolute;top:15px;left:-30px;width:150px;height:18px;background:linear-gradient(90deg,#FFD700,#8B7500);transform:rotate(-45deg);box-shadow:0 0 10px gold}
+.gold-corner::after{content:'';position:absolute;top:35px;left:-25px;width:150px;height:6px;background:linear-gradient(90deg,#FFD700,#8B7500);transform:rotate(-45deg)}
+.top-line{position:absolute;top:0;right:0;width:70%;height:5px;background:linear-gradient(90deg,#8B7500,#FFD700)}
+
+.avatar-wrap{position:relative;width:160px;height:160px;margin:60px auto 10px}
+.avatar{width:145px;height:145px;border-radius:50%;object-fit:cover;border:3px solid #FFD700;display:block;margin:auto;box-shadow:0 0 15px rgba(255,215,0,0.6)}
+.crown-img{position:absolute;top:-28px;left:50%;transform:translateX(-50%);font-size:42px;filter:drop-shadow(0 2px 5px gold)}
+.laurel{position:absolute;top:10px;font-size:58px;color:#d4af37}
+.laurel.left{left:-18px;transform:scaleX(-1)}
+.laurel.right{right:-18px}
+
+h1{font-size:26px;font-weight:900;margin:15px 0 5px;line-height:1.2}
+.bio{color:#FFD700;font-size:15px;margin-bottom:20px}
+
+.btn{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(#1e1e1e,#151515);color:#fff;text-decoration:none;padding:16px 22px;border-radius:30px;margin:0 auto 11px;max-width:340px;border:1px solid #222;font-weight:bold}
+.btn:hover{border-color:gold}
+
+.qr-wrap{position:relative;margin:35px auto 0;width:210px}
+.qr-glow{position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:190px;height:190px;background:radial-gradient(circle, rgba(255,215,0,0.9) 0%, rgba(255,215,0,0.3) 40%, transparent 70%);filter:blur(8px)}
+.qr-card{position:relative;background:linear-gradient(#FFD700,#FFA500);padding:3px;border-radius:18px;box-shadow:0 0 25px gold}
+.qr-inner{background:#fff;padding:7px;border-radius:15px}
+.qr-inner img{width:100%;display:block;border-radius:10px}
+.pedestal{width:220px;height:55px;background:radial-gradient(ellipse at center, #FFD700 0%, #8B7500 50%, #000 75%);border-radius:50%;margin:-25px auto 0;box-shadow:0 -10px 20px rgba(255,215,0,0.6);border-top:2px solid gold}
+.scan-row{margin-top:8px;display:flex;justify-content:center;align-items:center;gap:10px}
+.scan-btn{background:linear-gradient(#FFD700,#FFC400);color:#000;padding:7px 20px;border-radius:20px;font-weight:900;font-size:14px;display:flex;gap:6px;align-items:center;box-shadow:0 0 15px gold}
+.arr{color:gold;font-weight:900;font-size:20px}
 </style>
 </head>
 <body>
-<div class="crown">👑</div>
+<div class="page">
+<div class="gold-corner"></div>
+<div class="top-line"></div>
+
+<div class="avatar-wrap">
+<div class="crown-img">👑</div>
+<div class="laurel left">🌿</div>
 <img class="avatar" src="Messenger_creation_3B752A3F-8175-4F0F-B633-2E37DC87D3E9.jpeg" onerror="this.src='https://via.placeholder.com/150'">
+<div class="laurel right">🌿</div>
+</div>
+
 <h1>Ahmed Ragheb El-Houty</h1>
 <div class="bio">✨ احمد راغب الحوتي | تابعني ✨</div>
 
-<a class="btn" href="https://www.facebook.com/share/1CJ6obs4Qv/" target="_blank">Facebook <i class="fab fa-facebook" style="color:#1877F2"></i></a>
-<a class="btn" href="https://www.instagram.com/ahmedraghebalhoty" target="_blank">Instagram <i class="fab fa-instagram" style="color:#E4405F"></i></a>
-<a class="btn" href="https://www.tiktok.com/@ahmedrageb3592" target="_blank">TikTok <i class="fab fa-tiktok"></i></a>
-<a class="btn" href="https://www.snapchat.com/add/ahmed_r258419" target="_blank">Snapchat <i class="fab fa-snapchat" style="color:#FFFC00"></i></a>
-<a class="btn" href="https://wa.me/201000000000" target="_blank">WhatsApp <i class="fab fa-whatsapp" style="color:#25D366"></i></a>
-<a class="btn" href="https://ipn.eg/S/rageb2575gimal.com/instapay/2UHaO7" target="_blank">InstaPay <i class="fa-solid fa-money-bill-transfer"></i></a>
+<a class="btn" href="https://www.facebook.com/share/1CJ6obs4Qv/" target="_blank"><i class="fab fa-facebook" style="color:#1877F2"></i> Facebook</a>
+<a class="btn" href="https://www.instagram.com/ahmedraghebalhoty" target="_blank"><i class="fab fa-instagram" style="color:#E4405F"></i> Instagram</a>
+<a class="btn" href="https://www.tiktok.com/@ahmedrageb3592" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+<a class="btn" href="https://www.snapchat.com/add/ahmed_r258419" target="_blank"><i class="fab fa-snapchat" style="color:#FFFC00"></i> Snapchat</a>
+<a class="btn" href="https://wa.me/201000000000" target="_blank"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp</a>
+<a class="btn" href="https://ipn.eg/S/rageb2575gimal.com/instapay/2UHaO7" target="_blank"><i class="fa-solid fa-money-bill-transfer"></i> InstaPay</a>
 
-<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://rageb2575-lang.github.io/ahmed-ragheb-links/" alt="QR">
-<div><span style="color:gold">>> </span><span class="scan">Scan me</span><span style="color:gold"> <<</span></div>
+<div class="qr-wrap">
+<div class="qr-glow"></div>
+<div class="qr-card">
+<div class="qr-inner">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://rageb2575-lang.github.io/ahmed-ragheb-links/" alt="qr">
+</div>
+</div>
+<div class="pedestal"></div>
+<div class="scan-row">
+<span class="arr">>></span>
+<div class="scan-btn"><i class="fa-solid fa-mobile-screen"></i> Scan me</div>
+<span class="arr"><<</span>
+</div>
+</div>
 
+</div>
 </body>
 </html>
