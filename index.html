@@ -34,7 +34,7 @@ h1{font-size:26px;font-weight:900;margin:18px 0 6px;text-align:center;min-height
 <img class="avatar" src="Messenger_creation_3B752A3F-8175-4F0F-B633-2E37DC87D3E9.jpeg">
 <h1 id="typed-name"></h1>
 <div class="bio">✨ احمد راغب الحوتي | تابعني ✨</div>
-<div id="views">👁️ 5743 شخص شاف صفحتك</div>
+<div id="views">👁️ 5743</div>
 <div class="buttons">
 <a class="btn" href="https://www.facebook.com/share/1CJ6obs4Qv/" target="_blank"><span><i class="fab fa-facebook" style="color:#1877F2"></i> Facebook</span> <span>›</span></a>
 <a class="btn" href="https://www.instagram.com/ahmedraghebalhoty" target="_blank"><span><i class="fab fa-instagram" style="color:#E4405F"></i> Instagram</span> <span>›</span></a>
@@ -60,7 +60,7 @@ let START = 5743;
 let count = localStorage.getItem('ahmed_real_count');
 if(count === null){ count = START; } else { count = parseInt(count) + 1; }
 localStorage.setItem('ahmed_real_count', count);
-document.getElementById('views').innerHTML = `👁️ ${count.toLocaleString()} شخص شاف صفحتك`;
+document.getElementById('views').innerHTML = `👁️ ${count.toLocaleString()}`;
 </script>
 </body>
 </html>
