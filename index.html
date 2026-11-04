@@ -6,20 +6,49 @@
 <title>Ahmed Ragheb El-Houty</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-body{margin:0;background:#000;color:#fff;font-family:Arial;text-align:center;min-height:100vh}
-.page{position:relative;width:100%;max-width:400px;margin:0 auto;min-height:100vh;background:#000;padding:20px;overflow:hidden}
+*{box-sizing:border-box}
+body{margin:0;background:#000;color:#fff;font-family:Arial;display:flex;justify-content:center;align-items:center;min-height:100vh}
+.page{position:relative;width:100%;max-width:400px;min-height:100vh;background:#000;padding:20px 16px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center}
+
+/* الخط الدهبي فوق شمال - لامع */
 .gold-corner{position:absolute;top:0;left:0;width:140px;height:140px;overflow:hidden;z-index:10}
-.gold-corner::before{content:'';position:absolute;top:18px;left:-35px;width:170px;height:22px;background:linear-gradient(90deg,#FFF200,#FFD700,#FFC400);transform:rotate(-45deg);box-shadow:0 0 15px #FFD700, 0 0 30px #FFD700}
+.gold-corner::before{content:'';position:absolute;top:18px;left:-35px;width:170px;height:22px;background:linear-gradient(90deg,#FFF200,#FFD700);transform:rotate(-45deg);box-shadow:0 0 15px #FFD700,0 0 30px #FFD700}
 .gold-corner::after{content:'';position:absolute;top:42px;left:-30px;width:170px;height:7px;background:linear-gradient(90deg,#FFF200,#FFD700);transform:rotate(-45deg);box-shadow:0 0 10px gold}
 .top-line{position:absolute;top:0;right:0;width:72%;height:6px;background:linear-gradient(90deg,#FFD700,#FFF176,#FFD700);box-shadow:0 0 15px gold;z-index:10}
 
-.avatar-wrap{position:relative;width:160px;height:160px;margin:65px auto 10px}
-.avatar{width:145px;height:145px;border-radius:50%;object-fit:cover;border:3px solid #FFD700;display:block;margin:auto;box-shadow:0 0 20px rgba(255,215,0,0.8)}
+.center-box{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1}
 
-h1{font-size:26px;font-weight:900;margin:18px 0 5px}
-.bio{color:#FFD700;font-size:15px;margin-bottom:22px}
-.btn{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(#1e1e1e,#151515);color:#fff;text-decoration:none;padding:17px 22px;border-radius:30px;margin:0 auto 12px;max-width:340px;border:1px solid #222;font-weight:bold;font-size:17px}
-.btn:hover{border-color:gold;box-shadow:0 0 12px rgba(255,215,0,0.4)}
+.avatar-wrap{position:relative;width:165px;height:165px;margin:0 auto 12px}
+.avatar{width:155px;height:155px;border-radius:50%;object-fit:cover;border:3px solid #FFD700;display:block;margin:auto;box-shadow:0 0 25px rgba(255,215,0,0.9),0 0 50px rgba(255,215,0,0.3)}
+
+h1{font-size:27px;font-weight:900;margin:18px 0 4px;text-align:center}
+.bio{color:#FFD700;font-size:15px;margin-bottom:22px;text-align:center}
+
+.buttons{width:100%;display:flex;flex-direction:column;gap:12px}
+.btn{position:relative;display:flex;justify-content:space-between;align-items:center;background:#161616;color:#fff;text-decoration:none;padding:17px 22px;border-radius:30px;width:100%;border:1px solid #222;font-weight:bold;font-size:18px;overflow:hidden;transition:transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;will-change:transform}
+
+/* تأثير الشفط لما تدوس */
+.btn:active{
+  transform:scale(0.92);
+  filter:brightness(0.7);
+  box-shadow:inset 0 8px 20px rgba(0,0,0,0.9), inset 0 -2px 10px rgba(255,215,0,0.2);
+  border-color:gold;
+}
+
+.btn::after{
+  content:'';
+  position:absolute;
+  top:50%;left:50%;
+  width:0;height:0;
+  background:radial-gradient(circle, rgba(255,215,0,0.25) 0%, transparent 70%);
+  transform:translate(-50%,-50%);
+  transition:width 0.4s ease, height 0.4s ease;
+  border-radius:50%;
+  pointer-events:none;
+}
+.btn:active::after{
+  width:400px;height:400px;
+}
 </style>
 </head>
 <body>
@@ -27,6 +56,7 @@ h1{font-size:26px;font-weight:900;margin:18px 0 5px}
 <div class="gold-corner"></div>
 <div class="top-line"></div>
 
+<div class="center-box">
 <div class="avatar-wrap">
 <img class="avatar" src="Messenger_creation_3B752A3F-8175-4F0F-B633-2E37DC87D3E9.jpeg" onerror="this.src='https://via.placeholder.com/150'">
 </div>
@@ -34,12 +64,15 @@ h1{font-size:26px;font-weight:900;margin:18px 0 5px}
 <h1>Ahmed Ragheb El-Houty</h1>
 <div class="bio">✨ احمد راغب الحوتي | تابعني ✨</div>
 
+<div class="buttons">
 <a class="btn" href="https://www.facebook.com/share/1CJ6obs4Qv/" target="_blank"><i class="fab fa-facebook" style="color:#1877F2"></i> Facebook</a>
 <a class="btn" href="https://www.instagram.com/ahmedraghebalhoty" target="_blank"><i class="fab fa-instagram" style="color:#E4405F"></i> Instagram</a>
 <a class="btn" href="https://www.tiktok.com/@ahmedrageb3592" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
 <a class="btn" href="https://www.snapchat.com/add/ahmed_r258419" target="_blank"><i class="fab fa-snapchat" style="color:#FFFC00"></i> Snapchat</a>
 <a class="btn" href="https://wa.me/201000000000" target="_blank"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp</a>
 <a class="btn" href="https://ipn.eg/S/rageb2575gimal.com/instapay/2UHaO7" target="_blank"><i class="fa-solid fa-money-bill-transfer"></i> InstaPay</a>
+</div>
+</div>
 
 </div>
 </body>
